@@ -13,14 +13,13 @@ const SearchForm=({onSearch})=>{
       };
 
       const onSubmit=ev=>{
-        ev. preventDefault();
-       
-        const Options={
+        ev.preventDefault();
+       const Option={
         q:searchStr,
         searchOption,
         };
-        onSearch(Options);
-    };
+        onSearch(Option);
+    }
     return( 
     <form onSubmit={onSubmit}>
         <input type="text" value={searchStr} onChange={onSearchInputChange} />
