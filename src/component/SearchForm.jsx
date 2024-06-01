@@ -4,17 +4,19 @@ const SearchForm=({onSearch})=>{
     const [searchStr, setSearchStr] = useState('');
     const[searchOption,setSearchOption]=useState('shows');
 
+    
     const onSearchInputChange = ev => {
         setSearchStr(ev.target.value);
       };
     
-      const onRadioChange=ev=>{
+      const onRadioChange= ev =>{
         setSearchOption(ev.target.value);
       };
 
-      const onSubmit=ev=>{
+      const onSubmit = ev =>{
         ev.preventDefault();
-       const Option={
+       
+        const Option={
         q:searchStr,
         searchOption,
         };

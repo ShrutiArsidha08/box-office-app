@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { searchForShows,searchForPeople} from './../api/tvmaze';
 import SearchForm from '../component/SearchForm';
 import ActorsGrid from '../component/actors/ActorsGrid';
-import ShowGrid from '../component/show/ShowGrid';
+import ShowGrid from '../component/shows/ShowGrid'
+
 
 
 const Home = () => {
