@@ -1,8 +1,20 @@
-// import React from 'react';
+
 import ShowCard from "./ShowCard";
+import {useStarredShows} from'../../lib/useStarredShows';
 
 const ShowGrid=({show})=>{
-    console.log(show);
+ const [starredShows,dispatchstarred]=useStarredShows()
+
+ const onStarMeClick=(showId)=>{
+    const isStarred=starredShows.includes(showId);
+
+    if(isStarred){
+        dispatchstarred({type:'UNSTAR',showId})
+    }else{
+        dispatchstarred({type:'STAR',showId})
+    }
+    };
+ 
     return(
     <div>{
     show.map (data =>(
@@ -14,7 +26,8 @@ const ShowGrid=({show})=>{
          data.show.image.medium:'/not-found-image.png'
         }
         summary={data.show.summary}
-        
+        onStarMeClick={onStarMeClick}
+        isStarred={starredShows.includes(data.show.id)}
         />
     ))}</div>
 );
