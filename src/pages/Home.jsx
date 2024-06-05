@@ -4,6 +4,8 @@ import { searchForShows,searchForPeople} from './../api/tvmaze';
 import SearchForm from '../component/SearchForm';
 import ActorsGrid from '../component/actors/ActorsGrid';
 import ShowGrid from '../component/shows/ShowGrid';
+import styled,{css} from 'styled-components'
+
 
 const Home = () => {
   const [filter, setFilter] = useState(null);
@@ -41,6 +43,7 @@ if (apiData) {
       };
 return (
     <div>
+    
       <SearchForm  onSearch={onSearch}/>
       <div>{renderApiData()}</div>
     </div>
