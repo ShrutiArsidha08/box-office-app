@@ -1,6 +1,8 @@
 
 import ShowCard from "./ShowCard";
 import {useStarredShows} from'../../lib/useStarredShows';
+import { FlexGrid } from "../commom/FlexGrid";
+
 
 const ShowGrid=({show})=>{
  const [starredShows,dispatchstarred]=useStarredShows()
@@ -16,7 +18,7 @@ const ShowGrid=({show})=>{
     };
  
     return(
-    <div>{
+    <FlexGrid>{
     show.map (data =>(
         <ShowCard
          key={data.show.id} 
@@ -29,7 +31,8 @@ const ShowGrid=({show})=>{
         onStarMeClick={onStarMeClick}
         isStarred={starredShows.includes(data.show.id)}
         />
-    ))}</div>
+    ))}
+    </FlexGrid>
 );
 };
 export default ShowGrid;
