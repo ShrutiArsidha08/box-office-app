@@ -1,6 +1,7 @@
 
 import {useRef}from 'react';
 import styled from "styled-components";
+import {Link} from "react-router-dom"
 import {SearchCard,SearchImgWrapper} from '../commom/SearchCard'
 import { StarIcon } from "../commom/Staricon";
 
@@ -38,7 +39,7 @@ const starBtnEl=starBtnRef.current;
 
     <ActionSection>
     
-        <a href={`/Show/${id}`} target="_blank" rel="noreferrer"> Read More</a>
+        <Link to={`/Show/${id}`} target="_blank" rel="noreferrer"> Read More</Link>
         
         <StarBtn 
         ref={starBtnRef}
